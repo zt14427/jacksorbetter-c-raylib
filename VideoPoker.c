@@ -406,10 +406,6 @@ void PlayJacksOrBetter() {
 			DrawTexture(maxBetTexture, maxBetButtonAnchor[0], maxBetButtonAnchor[1], tint);
 			DrawTexture(drawTexture, drawButtonAnchor[0], drawButtonAnchor[1], tint);
 
-			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-				__debugPrintHand(hand, state);
-			}
-
 			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && (drawCounter == 0 || drawCounter == 6 || drawCounter == 12)) {
 				mousex = GetMouseX();
 				mousey = GetMouseY();
