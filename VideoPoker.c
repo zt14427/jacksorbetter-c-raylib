@@ -38,7 +38,6 @@ int compare_ints(const void* a, const void* b);
 void DrawTextWithShadow(const char* text, int x, int y, int fontSize, Color color, Color shadowColor, int shadowOffset);
 char* strcpy(char* destination, const char* source);
 void __debugPrintHand(Card hand[], int state);
-void __CheatHand(Card* hand);
 
 int main() {
 	SetConfigFlags(FLAG_WINDOW_RESIZABLE);
@@ -335,8 +334,6 @@ void PlayJacksOrBetter() {
 					DrawText(TextFormat("%i", betLookup[r] * (c + 1)), scoreCoords[c + 2][r][0], scoreCoords[c + 2][r][1], fontSizeInt, white);
 				}
 			}
-
-			__CheatHand(hand);
 
 			// draw cards
 			for (int i = 0; i < 5; i++) {
@@ -683,12 +680,4 @@ void __debugPrintHand(Card hand[], int state) {
 	for (int i = 0; i < 5; i++) {
 		printf("\n\nCardNo: %i\nCardVal: %i", i, hand[i].value);
 	}
-}
-
-void __CheatHand(Card* hand) {
-	hand[0].value = 11;
-	hand[1].value = 11;
-	hand[2].value = 3;
-	hand[3].value = 2;
-	hand[4].value = 1;
 }
